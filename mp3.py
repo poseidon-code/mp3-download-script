@@ -34,12 +34,11 @@ def get_download_path():
 
 
 
-
 '''sets DEFALUT PATH for download Location'''
 path = get_download_path()
 
 ''' add a CUSTOM PATH for download loaction (remove '#' from the line BELOW & add the new PATH) '''
-path = 'E:'
+#path = 'E:'
 
 # Main Download Script
 def run():
