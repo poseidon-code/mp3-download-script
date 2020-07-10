@@ -20,6 +20,7 @@ def check():
 
 
 
+
 # Returns the default downloads path for linux or windows
 def get_download_path():
     if os.name == 'nt':         # for WINDOWS system
@@ -34,24 +35,34 @@ def get_download_path():
 
 
 
+
+
+
+# gets ./ffmpeg.exe PATH 
+ffmpeg_path = os.getcwd()
+
 '''sets DEFALUT PATH for download Location'''
 path = get_download_path()
 
-''' add a CUSTOM PATH for download loaction (remove '#' from the line BELOW & add the new PATH) '''
-#path = 'E:'
+''' add a CUSTOM PATH for download loaction (remove '#' from the line BELOW & add the new PATH inside quotes ' ' '''
+#path = ''
 
 # Main Download Script
 def run():
     options = {
+        # PERMANENT options
         'format': 'bestaudio/best',
+        'ffmpeg_location': f'{ffmpeg_path}/ffmpeg.exe',
         'keepvideo': False,
-        'noplaylist': True,
         'outtmpl': f'{path}/%(title)s.*',
-         'postprocessors': [{
+        'postprocessors': [{
             'key': 'FFmpegExtractAudio',
             'preferredcodec': 'mp3',
             'preferredquality': '320'
-        }]
+        }],
+
+        #(optional options)
+        'noplaylist': True
     }
 
     # the 'youtube_dl' module will be imported on program run
