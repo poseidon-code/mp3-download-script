@@ -44,7 +44,7 @@ ffmpeg_path = os.getcwd()
 '''sets DEFALUT PATH for download Location'''
 path = get_download_path()
 
-''' add a CUSTOM PATH for download loaction (remove '#' from the line BELOW & add the new PATH inside quotes ' ' '''
+''' add a CUSTOM PATH for download loaction (remove '#' from the line BELOW & add the new PATH inside ' '(quotes) '''
 #path = ''
 
 # Main Download Script
@@ -61,7 +61,7 @@ def run():
             'preferredquality': '320'
         }],
 
-        #(optional options)
+        #(OPTIONAL options)
         'noplaylist': True
     }
 
