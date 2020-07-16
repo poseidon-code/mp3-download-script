@@ -58,6 +58,13 @@ ___
 <a name="Options"></a>
 ## Options
 
+Here are the list of OPTIONS that can be added by the End User for better customizability of the script and for ease of use. _(view [Customizing](#Customizing) for adding these options inside the script)_
+
+|OPTIONS    |DESCRIPTION    |
+|-----------|---------------|
+|noplaylist|    **True;** DOES NOT downloads the whole playlist if the video URL provided is that of a  video in a playlist. _(default: **False**)_|
+|yesplaylist|   **False;** DOES NOT downloads the whole playlist if the video URL provided is that of a  video in a playlist. _(default: **True**)_|
+|cachedir|  **True;** ENABLES filesystem caching _(default: **False**)_|
 
 ---
 
@@ -71,8 +78,30 @@ Various options of downloading can be added directly to the **mp3.py** script. T
 *   Press **Ctrl + F** or start **Find** feature of your editor and search for **" OPTIONAL "**.
 *   Under **OPTIONAL** you can add multitude of Custom Options to make your script unique.
 *   Enter your desired options by adding a ' **,** ' _(comma)_ at the end of every option you add.
-*   The list of all options that can be added are found [here](#Options).
+*   Yor code will look like this :
+    ```python
+    def run():
+    options = {
+        # PERMANENT options        <--- DON'T CHANGE these options
+        'format': 'bestaudio/best',
+        'ffmpeg_location': f'{ffmpeg_path}/ffmpeg.exe',
+        'keepvideo': False,
+        'outtmpl': f'{path}/%(title)s.*',
+        'postprocessors': [{
+            'key': 'FFmpegExtractAudio',
+            'preferredcodec': 'mp3',
+            'preferredquality': '320'
+        }],
 
+        #(OPTIONAL options)        <--- ADD options from here
+        'noplaylist': True,
+        'options': 'value',
+            .       .
+            .       .
+            .       .
+    }
+    ```
+*   The list of all options that can be added are found [here](#Options).
 ---
 
 
@@ -88,4 +117,4 @@ Various options of downloading can be added directly to the **mp3.py** script. T
 <a name="Acknowledgement"></a>
 ## Acknowledgement
 
-***
+This script is made by poseidon-code using _python_ programming language, _youtube-dl_ python library and _ffmepeg_ media conversion utility for General Use in Public Domain.
