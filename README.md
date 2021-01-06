@@ -8,7 +8,7 @@ ___
 2.  [Customizing](#Customizing)
 3.  [Authors](#Authors)
 4.  [Acknowledgement](#Acknowledgement)
-5.  [License](#Liecnse)
+5.  [License](#License)
 ***
 
 
